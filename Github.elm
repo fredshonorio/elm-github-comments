@@ -38,9 +38,9 @@ commentsDecoder = list
           
 url : Owner -> Repo -> IssueNumber -> String
 url owner repo number =
-    String.concat [ "https://api.github.com/repos/", owner, "/", repo
-                  , "/issues/", toString number, "/comments?sort=created&direction=desc"
-                  ]
+    String.join "/" [ "https://api.github.com", "repos", owner, repo, "issues", toString number
+                    , "comments?sort=created&direction=desc"
+                    ]
       
 getComments : Owner -> Repo -> IssueNumber -> Cmd Msg
 getComments owner repo number =
