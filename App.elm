@@ -1,7 +1,7 @@
 module App exposing (init, update, view, subscriptions, IssueRef)
 import Html
 import Html exposing (Html, Attribute, text, a, div, img)
-import Html.Attributes exposing (href, src, height, title)
+import Html.Attributes exposing (href, src, height, title, target)
 import RemoteData exposing (WebData, RemoteData(..))
 import Github exposing (Comments, Comment, Msg(..), getComments)
 import Github exposing (Owner, Repo, IssueNumber)
@@ -89,7 +89,10 @@ viewComment { html_url, body_html, login, avatar_url, created_at } =
            ]
 
 viewComments : IssueRef -> Comments -> Html Msg
-viewComments issue comments = div [] (List.map viewComment comments)
+viewComments issue comments =
+    div [] [ div [] [ a [ href (issueUrl issue), target "_blank" ] [ text "Add a comment (opens Github)" ] ]
+           , div [] (List.map viewComment comments)
+           ]
 
 issueUrl : IssueRef -> String
 issueUrl { owner, repo, issue } =
