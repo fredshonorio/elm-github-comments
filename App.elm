@@ -72,7 +72,7 @@ viewComment { html_url, body_html, login, avatar_url, created_at } =
         header = div Style.commentHeader
                      [ div Style.commentHeaderItem
                            [ img [ src avatar_url
-                                 , height 60
+                                 , Style.commentAvatar
                                  ]
                                  []
                            ]

@@ -1,41 +1,24 @@
-module Style exposing (comment, commentHeader, commentContent, commentHeaderItem, commentDate, commentAuthor)
+module Style exposing (comment, commentHeader, commentContent, commentHeaderItem, commentDate, commentAuthor, commentAvatar)
 import Html exposing (Attribute)
-import Html.Attributes exposing (style)
-
--- #586069
+import Html.Attributes exposing (class)
 
 comment : List (Attribute msg)
-comment = [ style [ ("display", "flex")
-                  , ("flex-direction", "column")
-                  , ("border-width", "1 px")
-                  , ("border-color", "rgb(234, 236, 239)")
-                  , ("border-style", "solid")
-                  , ("margin", "10px")
-                  ]
-          ]
+comment = [ class "comments-comment" ]
 
 commentDate : Attribute msg
-commentDate = style [ ("color", "#586069") ]
+commentDate = class "comments-date"
 
 commentAuthor : List (Attribute msg)
-commentAuthor = [ style [ ("margin", "10px" ) ] ]
+commentAuthor = [ class "comments-author" ]
     
 commentHeader : List (Attribute msg)
-commentHeader = [ style [ ("border-bottom-width", "1 px")
-                        , ("border-bottom-style", "solid")
-                        , ("border-bottom-color", "rgb(234, 236, 239)")
-                        , ("display", "flex")
-                        , ("height", "80px")
-                        , ("align-items", "center")
-                        , ("margin", "10px" )
-                        ]
-                 ]
+commentHeader = [ class "comments-header" ]
 
 commentHeaderItem : List (Attribute msg)
 commentHeaderItem = [] -- [ style [ ("margin", "10px" ) ] ]
 
 commentContent : List (Attribute msg)
-commentContent = [ style [ ("margin-left", "10px")
-                         , ("margin-right", "10px")
-                         ]
-                 ]
+commentContent = [ class "comments-content" ]
+
+commentAvatar : Attribute msg
+commentAvatar = class "comments-avatar"

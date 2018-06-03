@@ -1,0 +1,32 @@
+.comments-comment {
+    display: flex;
+    flex-direction: column;
+    border-width: 1 px;
+    border-color: rgb(234, 236, 239);
+    border-style: solid;
+    margin: 10px;
+}
+
+.comments-comment { color: #586069; }
+
+.comments-author { margin: 10px; }
+
+.comments-header {
+    display: flex;
+    border-bottom-width: 1 px;
+    border-bottom-style: solid; 
+    border-bottom-color: rgb(234, 236, 239);
+    height: 60px;
+    align-items: center;
+    margin: 5px;  
+    margin-top: 1px;  
+}
+
+.comments-content {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.comments-avatar {
+    height: 50px;
+}
